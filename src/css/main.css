@@ -1,3 +1,5 @@
-h1{
-  color: red;
+/* @import "other/other.css"; */ /* Импортированный файл почему то не обрабатывается postcss */
+
+.some{
+  display: flex;
 }

@@ -15,7 +15,7 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules/'
     }, {
-      test: /\.scss$/,
+      test: /\.(sass|scss)$/,
       use: [
         'style-loader',
         MiniCssExtractPlugin.loader,
@@ -44,7 +44,7 @@ module.exports = {
         {
           loader: 'postcss-loader',
           options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
-        },
+        }
       ]
     }
   ]
