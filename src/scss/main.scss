@@ -3,10 +3,14 @@
 @import "utils/mixins.scss";
 @import "utils/fonts.scss";
 
-.wrapper-scss {
-  display: flex;
+:root{
+  box-sizing: border-box;
+  font-size: 1em; 
 }
 
-.wrpapper-css2{
-  display: flex;
+*,
+::before,
+::after{
+  box-sizing: inherit;
 }
+
