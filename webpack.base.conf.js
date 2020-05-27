@@ -1,5 +1,7 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATH = {
   src: path.join(__dirname, './src'),
@@ -26,7 +28,15 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: '/node_modules/'
-    }, {
+    },
+    {
+      test: /\.(png|jpg|gif|svg)$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    }, 
+    {
       test: /\.(sass|scss)$/,
       use: [
         'style-loader',
@@ -37,14 +47,15 @@ module.exports = {
         },
         {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+          options: { sourceMap: true, config: { path: `${PATH.src}/js/postcss.config.js` } }
         },
         {
           loader: 'sass-loader',
           options: { sourceMap: true }
         }
       ]
-    }, {
+    }, 
+    {
       test: /\.css$/,
       use: [
         'style-loader',
@@ -55,7 +66,7 @@ module.exports = {
         },
         {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+          options: { sourceMap: true, config: { path: `${PATH.src}/js/postcss.config.js` } }
         }
       ]
     }
@@ -65,6 +76,17 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: `${PATH.assets}css/[name].css`
-    })
+    }),
+    new HtmlWebpackPlugin ({
+      hash: false,
+      template: `${PATH.src}/index.html`,
+      filename: './index.html'
+    }),
+    new CopyWebpackPlugin ({
+      patterns: [
+        { from: `${PATH.src}/img`, to: `${PATH.assets}img` },
+        { from: `${PATH.src}/static`, to: '' },
+      ]
+    }),
   ],
 }

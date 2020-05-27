@@ -1,5 +1,8 @@
 /* @import "other/other.css"; */ /* Импортированный файл почему то не обрабатывается postcss */
 
-.some{
-  display: flex;
+section{ 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
