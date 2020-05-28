@@ -50,6 +50,13 @@ module.exports = {
       }
     }, 
     {
+      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+.\d+)?$/,
+      loader: 'file-loader',
+      options: {
+        name: '[name].[ext]'
+      }
+    }, 
+    {
       test: /\.(sass|scss)$/,
       use: [
         'style-loader',
@@ -99,6 +106,7 @@ module.exports = {
     new CopyWebpackPlugin ({
       patterns: [
         { from: `${PATH.src}/img`, to: `${PATH.assets}img` },
+        { from: `${PATH.src}/fonts`, to: `${PATH.assets}fonts` },
         { from: `${PATH.src}/static`, to: '' },
       ]
     }),
