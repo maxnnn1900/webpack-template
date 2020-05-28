@@ -19,7 +19,7 @@ module.exports = {
     app: PATH.src
   },
   output: {
-    filename: `${PATH.assets}js/[name].js`, // имя берется из входного файла
+    filename: `${PATH.assets}js/[name].[hash].js`, // имя берется из входного файла
     path: PATH.dist,
     publicPath: '/'
   },
@@ -87,7 +87,7 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      filename: `${PATH.assets}css/[name].css`
+      filename: `${PATH.assets}css/[name].[hash].css`
     }),
     new HtmlWebpackPlugin ({
       hash: false,
