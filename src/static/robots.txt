@@ -1,0 +1,7 @@
+#https://yandex.ru/support/webmaster/controlling-robot/robots-txt.html
+User-agent: * #указываем, для каких роботов установлены директивы
+#Disallow: /bin/ # запрещает ссылки из "Корзины с товарами".
+#Disallow: /search/ # запрещает ссылки страниц встроенного на сайте поиска
+#Disallow: /admin/ # запрещает ссылки из панели администратора
+#Sitemap: http://example.com/sitemap # указываем роботу на файл sitemap для сайта
+#Clean-param: ref /some_dir/get_book.pl #Указывает роботу, что URL страницы содержит параметры (например, UTM-метки), которые не нужно учитывать при индексировании.
