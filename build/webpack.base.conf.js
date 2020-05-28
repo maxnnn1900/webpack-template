@@ -93,7 +93,8 @@ module.exports = {
     new HtmlWebpackPlugin ({
       hash: false,
       template: `${PATH.src}/index.html`,
-      filename: './index.html'
+      filename: './index.html',
+      // inject: false /* set true if js and css insert manually with ejs (https://github.com/jaketrent/html-webpack-template/blob/master/index.ejs) */
     }),
     new CopyWebpackPlugin ({
       patterns: [
