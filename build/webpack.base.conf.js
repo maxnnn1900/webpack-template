@@ -92,7 +92,11 @@ module.exports = {
     }
   ]
   },
-
+  resolve: {
+    alias: {
+      '~': PATH.src,
+    }
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: `${PATH.assets}css/[name].[hash].css`
