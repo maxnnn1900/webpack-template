@@ -16,7 +16,8 @@ module.exports = {
   },
 
   entry: {
-    app: PATH.src
+    app: PATH.src,
+    // example: `${PATH.src}example.js`
   },
   output: {
     filename: `${PATH.assets}js/[name].[hash].js`, // имя берется из входного файла
