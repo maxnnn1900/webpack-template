@@ -1,1 +1,5 @@
+// Относительный путь до шрифтов
+// @include font-face("Nunito", "../../assets/fonts/nunito-v12-latin_cyrillic-regular", 400, normal, woff woff2);
+
+// Прямой путь до шрифтов
 @include font-face("Nunito", "/assets/fonts/nunito-v12-latin_cyrillic-regular", 400, normal, woff woff2);

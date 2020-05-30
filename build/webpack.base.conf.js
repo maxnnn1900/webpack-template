@@ -32,7 +32,7 @@ module.exports = {
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`, // имя берется из входного файла
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: '/' // './' если относительный путь, так же необходимо внести изменения для шрифтов ниже
   },
   optimization: {
     splitChunks: {
@@ -77,7 +77,8 @@ module.exports = {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+.\d+)?$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        name: '[name].[ext]',
+        // publicPath: '../fonts', // если относительный путь у шрифта
       }
     }, 
     {
