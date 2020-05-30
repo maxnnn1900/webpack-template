@@ -17,3 +17,8 @@
 body{
   font-family: $mainFont;
 }
+
+h1{
+  font-size: 2.5rem;
+  margin: em(8, rem-to-px(2.5rem)) 0;
+}

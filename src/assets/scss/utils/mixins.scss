@@ -40,6 +40,21 @@
   }
 }
 
+@function parseInt($n) { 
+  @return $n / ($n * 0 + 1);
+}
+
+//convert rem back to px
+@function rem-to-px($size) { 
+  $base-size: $browser-context;
+  @if (unitless($base-size)) {
+    $base-size: $base-size * 1px;
+  }
+
+	$value: parseInt($size) * $base-size; 
+	@return round($value);
+}
+
 // Переводит пиксели в em
 @function em($pixels, $context: $browser-context) {
   @if (unitless($pixels)) {
@@ -51,4 +66,17 @@
   }
 
   @return $pixels / $context * 1em;
+}
+
+// Переводит пиксели в rem
+@function rem($pixels, $context: $browser-context) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
 }
