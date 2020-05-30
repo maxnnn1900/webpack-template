@@ -14,3 +14,9 @@
   align-items: center;
   justify-content: center;
 }
+
+.sample-mixin{
+  display: inline-block;
+  text-align: center;
+  margin: 0 1em;
+}
