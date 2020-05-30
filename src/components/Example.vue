@@ -12,7 +12,7 @@ export default {
     }
   },
   created(){
-    this.title = 'vue component'
+    this.title = this.$store.getters.getMessage
   }
 }
 </script>
