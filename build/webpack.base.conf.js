@@ -10,7 +10,7 @@ const PATHS = {
   assets: "assets/"
 };
 
-const PUG_ENABLE = false;
+const PUG_ENABLE = true;
 
 const PAGES_DIR = (PUG_ENABLE) ? `${PATHS.src}/pug/pages/` : `${PATHS.src}/html/`;
 

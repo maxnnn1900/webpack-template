@@ -1,9 +1,19 @@
-meta(charset='UTF-8')
-meta(name='viewport' content='width=device-width,initial-scale=1')
-meta(http-equiv='X-UA-Compatible' content='ie=edge')
-title webpack template
-section
-  .wrapper
-    h1 Hello :)
-    a(href='https://github.com/maxnnn1900/webpack-template')
-      img(src='/assets/img/logo.png' alt='webpack template')
+extends ../layout/main
+
+block variables
+  - var title = 'webpack template';
+  - var description = 'webpack template';
+  - var pageClass = 'index-page';
+
+block content
+  h1 Hello :)
+  a(href='https://github.com/maxnnn1900/webpack-template')
+    img(src='/assets/img/logo.png' alt='webpack template') 
+
+block script 
+  script(type="text/javascript"). 
+    const foo = true;
+    let bar = function() {};
+    if (foo) {
+      bar(1+5);
+    }
